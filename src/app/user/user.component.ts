@@ -21,7 +21,7 @@ export class UserComponent {
     const userCollection  = collection(this.firestore, 'users');
 
     // Assign the data from Firestore to the users$ observable
-    this.users$ = collectionData(userCollection);
+    this.users$ = collectionData(userCollection, { idField: 'id' });
 
     this.users$.subscribe((newUsers) => {
       this.allUsers = newUsers;

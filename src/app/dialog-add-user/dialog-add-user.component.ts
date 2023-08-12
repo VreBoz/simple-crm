@@ -12,13 +12,10 @@ import { User } from 'src/models/user.class';
 })
 export class DialogAddUserComponent {
   // user$: Observable<any[]>;
-  firestore: Firestore = inject(Firestore);
+  // firestore: Firestore = inject(Firestore);
 
-  constructor(public dialogRef: MatDialogRef<DialogAddUserComponent>) {
-    
-    
+  constructor(public firestore: Firestore, public dialogRef: MatDialogRef<DialogAddUserComponent> ) {
     const userCollection  = collection(this.firestore, 'users');
-    // this.user$ = collectionData(itemCollection);
   }
   closeDialog() {
     this.dialogRef.close();
